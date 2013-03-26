@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "产品类型";
+}
+
+@section Head{
+  
+   <script src="@Url.Content("~/Scripts/ProductType.js")" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>  
+    
+
+}
+
+<div region="center" style="width: 500px; height: 300px; padding: 1px;overflow-y: hidden">
+  <div id="grid" >
+  </div>
+</div>
+<div id="Dlg-Edit" title="窗口" style="width: 500px; height: 250px;" buttons="#buttons">
+        <div style="padding: 20px 20px 40px 40px;">
+            <form method="post" id="Form1">
+            <table>
+                
+                <tr>
+                    <td class="itemtxt">
+                        产品类型名称：
+                    </td>
+                    <td>
+                        <input type="text" name="ProductTypeName" id="ProductTypeName" class="easyui-validatebox" required="true" style="width: 200px;" maxlength=10 />
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="text-align:right">
+                        产品类型描述：
+                    </td>
+                    <td>
+                        <textarea name="Description" id="Description" style="width: 200px;"  class="easyui-validatebox" required="true" ></textarea><br />限制100个字节。
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+
+    <div id="buttons">
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveData()">保存</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#Dlg-Edit').dialog('close')">关闭</a>
+</div>
+<div id="search-window" title="搜索" style="width: 350px; height: 200px;padding:10px 20px" >
+        <div style="padding: 20px 20px 40px 40px;">
+            <form method="post" id="Form2">
+            <table>
+                <tr>
+                    <td class="itemtxt">
+                     类型名称：
+                    </td>
+                    <td>
+                       <input name="Name" id="Name" class="easyui-validatebox" required="true" style="width: 150px;" />
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+       <div  style="text-align: center; padding: 5px;">
+            <a href="javascript:void(0)" onclick="SearchOK()" id="btn-search" icon="icon-ok">确定</a>
+            <a href="javascript:void(0)" onclick="closeSearchWindow()" id="btn-search-cancel" icon="icon-cancel"> 取消</a>
+        </div>
+    </div>
+     
+
+
+
+
+
